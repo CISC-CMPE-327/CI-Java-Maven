@@ -52,7 +52,7 @@ To run the package:
 ```
 cd target
 java -jar java-project-1.0-SNAPSHOT.jar your_class
-``
+```
 
 #### Command lines used to generate this project (already done):
 ```
