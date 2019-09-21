@@ -27,3 +27,4 @@ jobs:
           LICENSE
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_REF: 0.0.1
