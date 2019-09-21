@@ -9,11 +9,15 @@ To install maven: https://maven.apache.org/install.html
 Project folder structure. Typically maven arranges test cases in a saperated root folder. 
 
 ```cmd
-.
+C:.
 │   .gitignore
 │   LICENSE
 │   pom.xml
 │   README.md
+│
+├───.github
+│   └───workflows
+│           maven.yml  =========> defined CI process for GitHub Actions
 │
 ├───src
 │   ├───main
@@ -21,14 +25,14 @@ Project folder structure. Typically maven arranges test cases in a saperated roo
 │   │       └───ca
 │   │           └───queensu
 │   │               └───cisc327
-│   │                       App.java
+│   │                       App.java  ======> general class
 │   │
 │   └───test
 │       └───java
 │           └───ca
 │               └───queensu
 │                   └───cisc327
-│                           AppTest.java
+│                           AppTest.java === Test class for App.java
 ```
 
 To compile the project:
