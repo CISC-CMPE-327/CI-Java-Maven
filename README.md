@@ -7,22 +7,23 @@ Folder structure. Typically maven arranges test cases in two different root pack
 .
 │   .gitignore
 │   LICENSE
+│   pom.xml
 │   README.md
-└───java-project
-    │   pom.xml
-    └───src
-        ├───main
-        │   └───java
-        │       └───ca
-        │           └───queensu
-        │               └───cisc327
-        │                       App.java
-        └───test
-            └───java
-                └───ca
-                    └───queensu
-                        └───cisc327
-                                AppTest.java
+│
+├───src
+│   ├───main
+│   │   └───java
+│   │       └───ca
+│   │           └───queensu
+│   │               └───cisc327
+│   │                       App.java
+│   │
+│   └───test
+│       └───java
+│           └───ca
+│               └───queensu
+│                   └───cisc327
+│                           AppTest.java
 ```
 
 To compile the project:
