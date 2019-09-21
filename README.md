@@ -12,7 +12,7 @@ Project folder structure. Typically maven arranges test cases in a saperated roo
 C:.
 │   .gitignore
 │   LICENSE
-│   pom.xml
+│   pom.xml  ============> define dependencies and your main class
 │   README.md
 │
 ├───.github
@@ -46,6 +46,16 @@ mvn exec:java -Dexec.mainClass="ca.queensu.cisc327.App"
 To run the test code:
 ```
 mvn test
+```
+Package for release
+```
+mvn package
+```
+If successful, the package will be in the target folder.
+To run the package:
+```
+cd target
+java -jar java-project-1.0-SNAPSHOT.jar
 ```
 
 #### Command lines used to generate this project (already done):
