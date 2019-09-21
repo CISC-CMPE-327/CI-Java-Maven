@@ -1,7 +1,7 @@
 # CI-Java-Maven-Template
 Github Actions CI Template for Java+Maven
 
-Folder structure. Typically maven arranges test cases in two different root packages. 
+Folder structure. Typically maven arranges test cases in a saperated root folder. 
 
 ```cmd
 .
