@@ -32,7 +32,7 @@ C:.
 │           └───ca
 │               └───queensu
 │                   └───cisc327
-│                           AppTest.java === Test class for App.java
+│                           AppTest.java ===> Test class for App.java
 ```
 
 To compile the project:
