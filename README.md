@@ -1,7 +1,9 @@
 # CI-Java-Maven-Template
 Github Actions CI Template for Java+Maven
 
-Folder structure. Typically maven arranges test cases in a saperated root folder. 
+To install maven: https://maven.apache.org/install.html
+
+Project folder structure. Typically maven arranges test cases in a saperated root folder. 
 
 ```cmd
 .
