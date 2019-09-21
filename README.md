@@ -41,7 +41,11 @@ To run the test code:
 mvn test
 ```
 
-### Command lines used to generate this project (already done):
+#### Command lines used to generate this project (already done):
 ```
-mvn archetype:generate -DgroupId=ca.queensu.cisc327 -DartifactId=java-project -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+mvn archetype:generate ^
+  -DgroupId=ca.queensu.cisc327 ^
+  -DartifactId=java-project ^
+  -DarchetypeArtifactId=maven-archetype-quickstart ^
+  -DinteractiveMode=false
 ```
