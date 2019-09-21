@@ -1,4 +1,7 @@
 # CI-Java-Maven-Template
+
+![](https://github.com/CISC-CMPE-327/CI-Java-Maven/workflows/Java%20CI/badge.svg)
+
 Github Actions CI Template for Java+Maven
 
 To install maven: https://maven.apache.org/install.html
