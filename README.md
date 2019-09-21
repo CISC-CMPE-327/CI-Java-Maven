@@ -1,6 +1,6 @@
 # CI-Java-Maven-Template
 
-[![](https://github.com/CISC-CMPE-327/CI-Java-Maven/workflows/Java%20CI/badge.svg)]((https://github.com/CISC-CMPE-327/CI-Java-Maven/actions)
+[![](https://github.com/CISC-CMPE-327/CI-Java-Maven/workflows/Java%20CI/badge.svg)](https://github.com/CISC-CMPE-327/CI-Java-Maven/actions)
 
 Github Actions CI Template for Java+Maven 
 
