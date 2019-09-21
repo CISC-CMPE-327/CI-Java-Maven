@@ -27,14 +27,17 @@ Folder structure. Typically maven arranges test cases in two different root pack
 
 To compile the project:
 ```
+cd java-project
 mvn compile
 ```
 To run the your main class:
 ```
+# run from the `java-project` folder
 mvn exec:java -Dexec.mainClass="ca.queensu.cisc327.App"
 ```
 To run the test code:
 ```
+# run from the `java-project` folder
 mvn test
 ```
 
