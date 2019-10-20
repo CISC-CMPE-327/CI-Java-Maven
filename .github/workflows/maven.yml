@@ -19,12 +19,3 @@ jobs:
       run: mvn test
     - name: package
       run: mvn package
-    - name: Release
-      uses: softprops/action-gh-release@v1
-      if: startsWith(github.ref, 'refs/tags/')
-      with:
-        files: |
-          target/java-project-1.0-SNAPSHOT.jar
-          LICENSE
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

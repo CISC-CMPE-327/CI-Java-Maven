@@ -1,8 +1,8 @@
 # CI-Java-Maven-Template
 
-![](https://github.com/CISC-CMPE-327/CI-Java-Maven/workflows/Java%20CI/badge.svg)
+[![](https://github.com/CISC-CMPE-327/CI-Java-Maven/workflows/Java%20CI/badge.svg)](https://github.com/CISC-CMPE-327/CI-Java-Maven/actions)
 
-Github Actions CI Template for Java+Maven
+Github Actions CI Template for Java+Maven 
 
 To install maven: https://maven.apache.org/install.html
 
@@ -32,18 +32,14 @@ C:.
 │           └───ca
 │               └───queensu
 │                   └───cisc327
-│                           AppTest.java ===> Test class for App.java
+│                           AppTest.java ===> Unit test class for App.java
 ```
 
 To compile the project:
 ```
 mvn compile
 ```
-To run the your main class:
-```
-mvn exec:java -Dexec.mainClass="ca.queensu.cisc327.App"
-```
-To run the test code:
+To run the unit test code:
 ```
 mvn test
 ```
@@ -55,7 +51,7 @@ If successful, the package will be in the target folder.
 To run the package:
 ```
 cd target
-java -jar java-project-1.0-SNAPSHOT.jar
+java -jar java-project-1.0-SNAPSHOT.jar your_class
 ```
 
 #### Command lines used to generate this project (already done):
