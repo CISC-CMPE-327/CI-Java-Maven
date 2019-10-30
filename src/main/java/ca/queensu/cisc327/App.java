@@ -9,28 +9,29 @@ import java.util.Scanner;
  * Hello world!
  *
  */
-public class App 
-{
+public class App {
     /***
-     * An example program that has two functionalities:
-        R1/ Ask for user's name and print it out
-        R2/ Write 'hello 327' to the file specified by app
-            argument if the user's name is 327.
+     * An example program: R1 program only accepts 'login' as key R2 print
+     * valid_account_list_file's content R3 write 'hmm i am a transaction.' to the
+     * transaction_summary_file
      */
-    public static void main( String[] args ) throws Exception
-    {
-        System.out.println( "Hello world!" );
+    public static void main(String[] args) throws Exception {
+        String valid_account_list_file = args[0];
+        String transaction_summary_file = args[1];
+        System.out.println("what is the key?");
 
         // R1:
-        System.out.println("What is your name please?:");
         Scanner scanner = new Scanner(System.in);
-        String name =scanner.nextLine();
-        System.out.println("Hello " + name);
-
+        String key = scanner.nextLine();
         // R2:
-        if(name.equals("327")){
-            Files.write(new File(args[0]).toPath(), "hello 327".getBytes());
-            System.out.println("file written!");
+        if (key.equals("login")) {
+            System.out.println("here is the content");
+            System.out.println(
+                String.join("\n", Files.readAllLines(new File(valid_account_list_file).toPath())));
+            System.out.println("writing transactions!");
+            Files.write(new File(transaction_summary_file).toPath(), "hmm i am a transaction.".getBytes());
+        } else {
+            System.out.print("omg wrong key");
         }
         scanner.close();
     }

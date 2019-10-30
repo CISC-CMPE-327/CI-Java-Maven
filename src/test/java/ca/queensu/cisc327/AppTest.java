@@ -19,31 +19,42 @@ public class AppTest {
 
     @Test
     public void testAppR1() throws Exception {
-        runAndTest(Arrays.asList("steven"), Arrays.asList("Hello steven"), null);
-
-    }
-
-    @Test
-    public void testAppR2() throws Exception {
-        runAndTest(Arrays.asList("327"), Arrays.asList("Hello 327", "file written!"),
-                getFileFromResource("/R2/expected.txt"));
-
+        runAndTest(Arrays.asList("login"), //
+                Arrays.asList("123456"), //
+                Arrays.asList("123456", "writing transactions!"), //
+                Arrays.asList("hmm i am a transaction."));
     }
 
     /**
      * Helper function to run the main function and verify the output
-     * @param terminal_input A list of string as the terminal input to run the program
-     * @param expected_terminal_tails A list of string expected at the tail of terminal output
-     * @param expected_output_file A file that contains the expected content for the output file
+     * 
+     * @param terminal_input                 A list of string as the terminal input
+     *                                       to run the program
+     * 
+     * @param valid_accounts                 A list of valid accounts to be used for
+     *                                       the test case
+     * 
+     * @param expected_terminal_tails        A list of string expected at the tail
+     *                                       of terminal output
+     * 
+     * @param expected_transaction_summaries A list of string expected to be in the
+     *                                       output transaction summary file
+     * 
      * @throws Exception
      */
-    public void runAndTest(List<String> terminal_input, List<String> expected_terminal_tails,
-            String expected_output_file) throws Exception {
+    public void runAndTest(List<String> terminal_input, //
+            List<String> valid_accounts, //
+            List<String> expected_terminal_tails, //
+            List<String> expected_transaction_summaries) throws Exception {
 
         // setup parameters for the program to run
-        // create a temporary file
-        File tmpFile = File.createTempFile("temp-test", ".tmp");
-        String[] args = { tmpFile.getAbsolutePath() };
+        // create temporary files
+        File valid_account_list_file = File.createTempFile("valid-accounts", ".tmp");
+        Files.write(valid_account_list_file.toPath(), String.join("\n", valid_accounts).getBytes());
+
+        File transaction_summary_file = File.createTempFile("transactions", ".tmp");
+
+        String[] args = { valid_account_list_file.getAbsolutePath(), transaction_summary_file.getAbsolutePath() };
 
         // setup user input
         String userInput = String.join(System.lineSeparator(), terminal_input);
@@ -69,18 +80,19 @@ public class AppTest {
         }
 
         // compare output file content to the expected content
-        if (expected_output_file != null) {
-            String expected_output = new String(Files.readAllBytes(Paths.get(expected_output_file)), "UTF-8");
-            String actual_output = new String(Files.readAllBytes(tmpFile.toPath()), "UTF-8");
-            assertEquals(expected_output, actual_output);
-        }
+        String actual_output = new String(Files.readAllBytes(transaction_summary_file.toPath()), "UTF-8");
+        String[] lines = actual_output.split("[\r\n]+");
+        for (int i = 0; i < lines.length; ++i)
+            assertEquals(expected_transaction_summaries.get(i), lines[i]);
 
     }
 
     /**
      * Retrieve the absolute path of the files in the resources folder
-     * @param relativePath The file's relative path in the resources folder (/test/resources)
-     * @return the absolute path of the file in the resource folder. 
+     * 
+     * @param relativePath The file's relative path in the resources folder
+     *                     (/test/resources)
+     * @return the absolute path of the file in the resource folder.
      */
     String getFileFromResource(String relativePath) {
         return new File(this.getClass().getResource(relativePath).getFile()).getAbsolutePath();
